@@ -5,7 +5,7 @@ const mongoose=require('mongoose');
 const morgan=require('morgan');
 const cors=require('cors');
 require("dotenv").config();
-const {readdirSync}=require("fs");
+const {readdirSync}=require("fs")
 
 //middleware (application middleware eigulo ura application jure thakbe)
 
