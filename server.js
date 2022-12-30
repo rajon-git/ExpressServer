@@ -16,13 +16,15 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(morgan("dev"));
 
-//db connection
+//database connection
 mongoose.connect(process.env.DATABASE)
          .then(()=> console.log("DB Connected"))
          .catch((error)=> console.log("DB Error ==>",error));
 
 //routesmiddleware
+
 readdirSync("./routes").map( r => app.use("/api/v1",require(`./routes/${r}`))); // backtic use korte hobe (``)
+
 
 //server
 const port=process.env.PORT || 8000;
